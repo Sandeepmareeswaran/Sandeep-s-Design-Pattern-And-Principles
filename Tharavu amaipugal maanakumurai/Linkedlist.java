@@ -74,9 +74,14 @@ class Linkedlist{
         while(temp!=null){
             if(temp.data==val){
                 System.out.print("value found");
-                break;
+                return;
+                
+
             }
+            temp=temp.next;
+
         }
+        System.out.print("No element found");
     }
 
 

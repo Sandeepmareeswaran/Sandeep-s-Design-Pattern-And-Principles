@@ -68,6 +68,16 @@ class Linkedlist{
         return prev;
         
     }
+    void search(int val){
+        Node temp = head;
+
+        while(temp!=null){
+            if(temp.data==val){
+                System.out.print("value found");
+                break;
+            }
+        }
+    }
 
 
 
@@ -88,6 +98,7 @@ class Linkedlist{
             n=n.next;
         }
         System.out.print("comopleted");
+        lst.search(3);
         
         
 

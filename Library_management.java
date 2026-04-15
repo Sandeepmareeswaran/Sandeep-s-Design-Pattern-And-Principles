@@ -1,36 +1,67 @@
-/*Design a Java-based Library Management System where users can borrow and return books, 
-and the system tracks availability and issued books. */
-import java.util.*;
-class Book{
-    
-    String book_name;
-    String author_name;
-    boolean avail;
-    Book(String book_name,String author_name){
-        this.book_name=book_name;
-        this.author_name=author_name;
-        this.avail = true;
-    }
+public class Main {
+    public static void main(String[] args) {
 
-    String getName(){
-        return book_name;
-    }
+        Scanner scan = new Scanner(System.in);
+        ArrayList<Student> students = new ArrayList<>();
 
-    boolean isAvail(){
-        return avail;
-    }
+        int choice;
 
-    void setAvail(boolean status){
-        avail=state;
-    }
+        do {
+            System.out.println("\n1 → Add Student");
+            System.out.println("2 → Add Marks");
+            System.out.println("3 → Show Marks");
+            System.out.println("0 → Exit");
 
+            choice = scan.nextInt();
+            scan.nextLine(); // 🔥 important
 
+            switch (choice) {
 
-}
+                case 1:
+                    System.out.println("Enter student name:");
+                    String name = scan.nextLine();
 
-class Library_management{
-    public static void main(String[] args){
-        system.out.print();
+                    students.add(new Student(name));
+                    System.out.println("Student added!");
+                    break;
 
+                case 2:
+                    System.out.println("Enter student name:");
+                    String sname = scan.nextLine();
+
+                    System.out.println("Enter mark:");
+                    int mark = scan.nextInt();
+                    scan.nextLine();
+
+                    for (Student s : students) {
+                        if (s.getName().equals(sname)) {
+                            s.addMark(mark);
+                            System.out.println("Mark added!");
+                        }
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Enter student name:");
+                    String sname2 = scan.nextLine();
+
+                    for (Student s : students) {
+                        if (s.getName().equals(sname2)) {
+                            s.showMarks();
+                        }
+                    }
+                    break;
+
+                case 0:
+                    System.out.println("Exiting...");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice!");
+            }
+
+        } while (choice != 0);
+
+        scan.close();
     }
 }

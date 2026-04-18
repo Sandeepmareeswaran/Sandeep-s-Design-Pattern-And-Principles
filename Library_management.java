@@ -1,63 +1,56 @@
-public class Main {
-    public static void main(String[] args) {
+import java.util.*;
+class Book{
+    String book_name;
+    boolean avail;
+    String author;
+    Book(String book_name,String author){
+        this.book_name=book_name;
+        avail=true;
+        this.autohor=author;
+    }
+}
+class Person{
+    String name;
+    ArrayList<Book> bk;
+    Person(String name){
+        this.name=name;
+        bk=new ArrayList<>();
+    }
 
+    void addBook(Book b){
+        bk.add(b);
+        b.avail=false;
+        System.out.println("book added !!");
+    }
+}
+class Library{
+    ArrayList<Person> pr;
+    Library(){
+        pr=new ArrayList<>();
+    }
+
+    void addPerson(Person p){
+        pr.add(p);
+        System.out.println("Person Added !!");
+    }
+}
+class Library_management{
+    public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
-        ArrayList<Student> students = new ArrayList<>();
+        int state;
+        do{
+            System.out.println("press 1=> add book\n press 2=> add person");
+            state = scan.nextInt();
 
-        int choice;
-
-        do {
-            System.out.println("\n1 → Add Student");
-            System.out.println("2 → Add Marks");
-            System.out.println("3 → Show Marks");
-            System.out.println("0 → Exit");
-
-            choice = scan.nextInt();
-            scan.nextLine(); // 🔥 important
-
-            switch (choice) {
-
+            switch(state){
                 case 1:
-                    System.out.println("Enter student name:");
-                    String name = scan.nextLine();
-
-                    students.add(new Student(name));
-                    System.out.println("Student added!");
-                    break;
-
-                case 2:
-                    System.out.println("Enter student name:");
-                    String sname = scan.nextLine();
-
-                    System.out.println("Enter mark:");
-                    int mark = scan.nextInt();
-                    scan.nextLine();
-
-                    for (Student s : students) {
-                        if (s.getName().equals(sname)) {
-                            s.addMark(mark);
-                            System.out.println("Mark added!");
-                        }
-                    }
-                    break;
-
-                case 3:
-                    System.out.println("Enter student name:");
-                    String sname2 = scan.nextLine();
-
-                    for (Student s : students) {
-                        if (s.getName().equals(sname2)) {
-                            s.showMarks();
-                        }
-                    }
-                    break;
-
-                
-                    System.out.println("Invalid choice!");
+                    System.out.println("Enter the book name");
+                    String bkname=scan.nextLine();
+                    Book b = new Book()
             }
 
-        } while (choice != 0);
+        }
 
-        scan.close();
+        
     }
 }

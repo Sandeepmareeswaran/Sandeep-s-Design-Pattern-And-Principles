@@ -43,6 +43,22 @@ class Library{
         pr.add(p);
         System.out.println("Person Added !!");
     }
+    void addBookToPerson(String personname,String bookname){
+        for(Person p:pr){
+            if(p.name.equals(personname)){
+                for(Book b:bn){
+                    if(b.book_name.equals(bookname)){
+                        if(b.avail){
+                            p.addBook(b);
+                        }else{
+                            System.out.println("book not avail !!");
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("Book add to the person added !");
+    }
 }
 class Library_management{
     public static void main(String[] args){
@@ -50,7 +66,7 @@ class Library_management{
         int state;
         Library lib = new Library();
         do{
-            System.out.println("press 1=> add book\n press 2=> add person");
+            System.out.println("press 1=> add book\n press 2=> add person \n press 3 for add the book in to the person\n");
             state = scan.nextInt();
 
             switch(state){
@@ -68,6 +84,14 @@ class Library_management{
                     System.out.println("Enter the name of the person to be added !!");
                     String personname = scan.nextLine();
                     lib.addPerson("Sandeep");
+                    break;
+                case 3:
+                    scan.nextLine();
+                    System.out.println("Enter the person name to add the book to him ?");
+                    String pname = scan.nextLine();
+                    System.out.println("Enter the book that to be added: ");
+                    String bname = scan.nextLine();
+                    lib.addBookToPerson(pname,bname);
                     break;
                 default:
                     System.out.println("Enter the valid one !!");

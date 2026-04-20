@@ -44,18 +44,26 @@ class Library{
         System.out.println("Person Added !!");
     }
     void addBookToPerson(String personname,String bookname){
+        boolean flag = false;
         for(Person p:pr){
             if(p.name.equals(personname)){
+                flag=true;
                 for(Book b:bn){
                     if(b.book_name.equals(bookname)){
                         if(b.avail){
                             p.addBook(b);
+                            return;
                         }else{
                             System.out.println("book not avail !!");
+                            return;
                         }
                     }
                 }
             }
+
+        }
+        if(!flag){
+            System.out.print("user Not found !!");
         }
         System.out.println("Book add to the person added !");
     }
@@ -83,7 +91,7 @@ class Library_management{
                     scan.nextLine();
                     System.out.println("Enter the name of the person to be added !!");
                     String personname = scan.nextLine();
-                    lib.addPerson("Sandeep");
+                    lib.addPerson(personname);
                     break;
                 case 3:
                     scan.nextLine();

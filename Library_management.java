@@ -22,6 +22,10 @@ class Person{
         b.avail=false;
         System.out.println("book added !!");
     }
+
+    void returnbk(Book b){
+
+    }
 }
 class Library{
     ArrayList<Person> pr;
@@ -42,6 +46,19 @@ class Library{
         Person p=new Person(personname);
         pr.add(p);
         System.out.println("Person Added !!");
+    }
+
+    void returnbook(String personname, String bookname){
+        for(Person p:pr){
+            if(personname.equals(p.name)){
+                for(Book b:bn){
+                    if(b.book_name.equals(bookname)){
+                        b.avail=true;
+                        System.out.println("Book returned !!!");
+                    }
+                }
+            }
+        }
     }
     void addBookToPerson(String personname,String bookname){
         boolean flag = false;
@@ -74,7 +91,7 @@ class Library_management{
         int state;
         Library lib = new Library();
         do{
-            System.out.println("press 1=> add book\n press 2=> add person \n press 3 for add the book in to the person\n");
+            System.out.println("press 1=> add book\n press 2=> add person \n press 3 for add the book in to the person\n Press 4=> return book \n");
             state = scan.nextInt();
 
             switch(state){
@@ -101,6 +118,18 @@ class Library_management{
                     String bname = scan.nextLine();
                     lib.addBookToPerson(pname,bname);
                     break;
+
+                case 4:
+                    scan.nextLine();
+                    System.out.println("Enter the Person name: ");
+                    String pn= scan.nextLine();
+                    System.out.println("Enter the Book name: ");
+                    String bn= scan.nextLine();
+                    lib.returnbook(pn,bn);
+                    break;
+                case 0:
+                    System.out.print("Exiting . . . . ");
+                    
                 default:
                     System.out.println("Enter the valid one !!");
 

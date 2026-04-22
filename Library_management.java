@@ -124,7 +124,7 @@ class Library_management{
                     System.out.println("Enter the Person name: ");
                     String pn= scan.nextLine();
                     System.out.println("Enter the Book name: ");
-                    String bn= scan.nextLine();
+                    String bn scan.nextLine();
                     lib.returnbook(pn,bn);
                     break;
                 case 0:

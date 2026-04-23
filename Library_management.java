@@ -60,6 +60,13 @@ class Library{
             }
         }
     }
+    void seeAvailBook(){
+        for(Book b:bn){
+            if(b.avail){
+                System.out.println("Book name: "+b.book_name);
+            }
+        }
+    }
     void addBookToPerson(String personname,String bookname){
         boolean flag = false;
         for(Person p:pr){
@@ -91,7 +98,7 @@ class Library_management{
         int state;
         Library lib = new Library();
         do{
-            System.out.println("press 1=> add book\n press 2=> add person \n press 3 for add the book in to the person\n Press 4=> return book \n");
+            System.out.println("press 1=> add book\n press 2=> add person \n press 3 for add the book in to the person\n Press 4=> return book \n Press 5=> see the available books\n");
             state = scan.nextInt();
 
             switch(state){
@@ -124,8 +131,12 @@ class Library_management{
                     System.out.println("Enter the Person name: ");
                     String pn= scan.nextLine();
                     System.out.println("Enter the Book name: ");
-                    String bn scan.nextLine();
+                    String bn =scan.nextLine();
                     lib.returnbook(pn,bn);
+                    break;
+
+                case 5:
+                    lib.seeAvailBook();
                     break;
                 case 0:
                     System.out.print("Exiting . . . . ");

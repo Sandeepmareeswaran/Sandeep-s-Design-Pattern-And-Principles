@@ -22,10 +22,14 @@ class Person{
         b.avail=false;
         System.out.println("book added !!");
     }
-
-    void returnbk(Book b){
-
+    void showBook(){
+        for(Book b:bk){
+            System.out.println(b.book_name);
+            System.out.println("avail: "+b.avail);
+        }
     }
+
+    
 }
 class Library{
     ArrayList<Person> pr;
@@ -67,6 +71,13 @@ class Library{
             }
         }
     }
+    void showPersonBook(String name){
+        for(Person p:pn){
+            if(p.name.equals(name)){
+                p.showBook();
+            }
+        }
+    }
     void addBookToPerson(String personname,String bookname){
         boolean flag = false;
         for(Person p:pr){
@@ -98,7 +109,7 @@ class Library_management{
         int state;
         Library lib = new Library();
         do{
-            System.out.println("press 1=> add book\n press 2=> add person \n press 3 for add the book in to the person\n Press 4=> return book \n Press 5=> see the available books\n");
+            System.out.println("press 1=> add book\n press 2=> add person \n press 3 for add the book in to the person\n Press 4=> return book \n Press 5=> see the available books\n Press 6 => show uesrs book \n");
             state = scan.nextInt();
 
             switch(state){
@@ -138,6 +149,10 @@ class Library_management{
                 case 5:
                     lib.seeAvailBook();
                     break;
+
+                case 6:
+                    System.out.println("Enter the user name to find all the book that he have: ");
+                    String uname  = scan.nextLine();
                 case 0:
                     System.out.print("Exiting . . . . ");
                     

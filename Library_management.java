@@ -72,7 +72,7 @@ class Library{
         }
     }
     void showPersonBook(String name){
-        for(Person p:pn){
+        for(Person p:pr){
             if(p.name.equals(name)){
                 p.showBook();
             }
@@ -151,8 +151,11 @@ class Library_management{
                     break;
 
                 case 6:
+                    scan.nextLine();
                     System.out.println("Enter the user name to find all the book that he have: ");
                     String uname  = scan.nextLine();
+                    lib.showPersonBook(uname);
+                    break;
                 case 0:
                     System.out.print("Exiting . . . . ");
                     

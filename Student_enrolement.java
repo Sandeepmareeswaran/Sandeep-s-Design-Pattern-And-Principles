@@ -29,6 +29,25 @@ class SystemManager{
         clist.add(c1);
         System.out.println("Course Added !!");
     }
+    void addStoCourse(String sname,String cname){
+        for(student s:slist){
+            if(sname.equals(s.name)){
+                System.out.println("Student found !");
+                for(course c:clist){
+                    if(c.cname.equals(cname)){
+                        s.clst.add(c);
+                        System.out.println("course added to the student successfully !!!");
+                    }
+                }
+            }
+        }
+
+    }
+    void showCourse(){
+        for(course c:clist){
+            System.out.println("courses: "+c.cname);
+        }
+    }
 }
 class Student_enrolement{
     public static void main(String[] arg){
@@ -55,6 +74,13 @@ class Student_enrolement{
                     String coursename =  scan.nextLine();
                     sys.addCourse(coursename);
                     break;
+                case 3:
+                    scan.nextLine();
+                    System.out.println("Enter the student name that to be added the courses: ");
+                    String sname = scan.nextLine();
+                    System.out.println("Enter the course name that to be added: ");
+                    String cname  = scan.nextLine();
+                    sys.addStoCourse(sname,cname);
                 default:
                     System.out.println("Enter the valid one");
             }

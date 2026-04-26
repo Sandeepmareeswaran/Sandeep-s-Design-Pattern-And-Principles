@@ -58,6 +58,14 @@ class SystemManager{
             }
         }
     }
+    void enrolementDetails(){
+        for(student s:slist){
+            System.out.println("Student name: "+s.name+"\nthe courses are listed bellow \n");
+            for(course c:s.clst){
+                System.out.println("courses: "+c.cname);
+            }
+        }
+    }
 }
 class Student_enrolement{
     public static void main(String[] arg){
@@ -65,7 +73,7 @@ class Student_enrolement{
         int state;
         SystemManager sys = new SystemManager();
         do{
-            System.out.println("Press 1 => add student\n Press 2 => add course\n Press 3 => add the course to the student\n Press 4 => show all the courses\n Press 5 => to show the courses that the student enrolled\n");
+            System.out.println("Press 1 => add student\n Press 2 => add course\n Press 3 => add the course to the student\n Press 4 => show all the courses\n Press 5 => to show the courses that the student enrolled\n Press 6 => view the entire student and along with there course enrolement\n");
             state = scan.nextInt();
 
             switch(state){
@@ -100,6 +108,9 @@ class Student_enrolement{
                     System.out.println("Enter the student name to check his enrolement in courses: ");
                     String studname = scan.nextLine();
                     sys.showStudentCourse(studname);
+                    break;
+                case 6:
+                    sys.enrolementDetails();
                     break;
                 default:
                     System.out.println("Enter the valid one");

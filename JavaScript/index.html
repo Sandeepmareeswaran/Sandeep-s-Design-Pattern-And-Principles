@@ -1,0 +1,30 @@
+<h1 id="hlo">
+    Hello worls
+</h1>
+<buton onClick="changeTxt()">change</buton>
+<input id="num1">
+<input id="num2">
+<botton onClick="addNum()">Add the numbers</botton>
+<p id="display">
+
+</p>
+
+
+<script>
+    var content = document.getElementById("hlo");
+    console.log(content);
+    console.log(content.textContent);
+
+
+    function changeTxt(){
+        content.textContent = "bye world";
+        console.log(content.textConent);
+    }
+
+    function addNum(){
+        var v1 = document.getElementById("num1").value;
+        var v2 = document.getElementById("num2").value;
+        var tot = Number(v1)+Number(v2);
+        document.getElementById("display").textContent = tot;
+    }
+</script>

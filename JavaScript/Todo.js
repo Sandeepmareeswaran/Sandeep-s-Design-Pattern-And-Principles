@@ -21,7 +21,14 @@ class User{
         console.log(user[this.name].task);
     }
     changeStatus(id,changestatus){
-        user[this.user].task[id].status=changestatus
+        console.log(user[this.name]);
+        var t = user[this.name].task;
+        for(let i=0;i<t.length;i++){
+            if(t[i].name==id){
+                t[i].status=changestatus;
+                console.log("status changes");
+            }
+        }
     }
 }
 

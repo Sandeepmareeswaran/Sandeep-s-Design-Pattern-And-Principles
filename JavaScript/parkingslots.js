@@ -60,3 +60,5 @@ createSlots(10);
 let v1 = new Vehicle("TN 15 MS 2422","4wheel");
 v1.bookSlot(2);
 seeAvailSlots();
+v1.removeSlot();
+seeAvailSlots();

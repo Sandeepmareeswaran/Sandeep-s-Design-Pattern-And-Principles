@@ -19,6 +19,7 @@ class Vechicle{
             
             if(slot[i]["Type"]==this.type && slot[i]["Vehicle"]===null){
                 slot[i]["Vehicle"]=this.detail;
+                console.log(slot[i]["Vehicle"]);
                 console.log("vehicle parked in the number called"+slot[i]["Number"]);
                 f=true;
                 break;
@@ -29,7 +30,18 @@ class Vechicle{
         }
     }
     removePark(){
-        
+        for(let i=0;i<slot.length;i++){
+            var arr = slot[i]["Vehicle"];
+            
+            if(arr!==null){
+                if(arr["Number"]==this.num){
+                    arr=null;
+                    console.log("Removed !!");
+                }
+            }
+        }
+
+
     }
 }
 
@@ -60,6 +72,7 @@ createSlots(10);
 
 var b1=new Vechicle('TN 01 SM 20202','Bike');
 b1.parkVechicle();
-b1.removePark();
+
 showAvail("Bike");
 showAvail("Car");
+b1.removePark();

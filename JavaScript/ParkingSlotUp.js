@@ -35,7 +35,8 @@ class Vechicle{
             
             if(arr!==null){
                 if(arr["Number"]==this.num){
-                    arr=null;
+                    
+                    slot[i]["Vehicle"]=null;
                     console.log("Removed !!");
                 }
             }
@@ -76,3 +77,4 @@ b1.parkVechicle();
 showAvail("Bike");
 showAvail("Car");
 b1.removePark();
+console.log(slot);

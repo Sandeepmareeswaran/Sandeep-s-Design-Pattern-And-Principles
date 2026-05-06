@@ -20,6 +20,17 @@
 
 
             }
+            .button-section{
+                background-color:rgb(222, 255, 222);
+                color:green;
+                margin-top:30px;
+                padding:10px;
+                border-style:dotted;
+                border-width:2px;
+                border-color:rgb(85, 85, 222);
+                border-radius:20px;
+
+            }
             
         </Style>
     </Head>
@@ -35,11 +46,13 @@
                 <option>NCompleted</option>
             </select><br/>
         </div>
+        <div class="button-section">
 
         <button onClick="addTask()">Add task</button>
 
 
         <button onClick="showTask()">Show task</button>
+        </div>
         <p id="showtaskelement"></p>
 
         <script>

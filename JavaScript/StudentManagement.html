@@ -1,0 +1,74 @@
+
+<html>
+    <!-- A student can:
+    add tasks
+    mark tasks completed
+    delete tasks
+    view all tasks-->
+
+    <Head>
+        <title>Student management system </title>
+        <Style>
+            .input-section{
+                background-color:gray;
+                color:rgb(165, 165, 224);
+                margin-top:20px;
+                padding:10px;
+                border-style:solid;
+                border-color:yellow;
+                border-radius:20px;
+
+
+            }
+            
+        </Style>
+    </Head>
+    <body>
+        <div class="input-section">
+
+        
+            <input type="text" style="border-radius:20px; color:rgb(250, 187, 187)" placeholder="Enter the tas that to be added" id="task">
+            <select id="status">
+                
+                <option>Not started</option>
+                <option>started</option>
+                <option>NCompleted</option>
+            </select><br/>
+        </div>
+
+        <button onClick="addTask()">Add task</button>
+
+
+        <button onClick="showTask()">Show task</button>
+        <p id="showtaskelement"></p>
+
+        <script>
+            var task=[];
+            function addTask(){
+                let tsk={};
+                let temp = document.getElementById("task").value;
+                tsk["Name"]=temp;
+                tsk["Status"]=document.getElementById("status").value;
+
+                task.push(tsk); 
+            }
+            function completeTask(i){
+                task[i]["Status"]="Completed";
+                showTask();
+            }
+            function showTask(){
+                var tep=document.getElementById("showtaskelement");
+                tep.innerHTML="";
+                for(let i=0;i<task.length;i++){
+                    tep.innerHTML +=
+                    task[i]["Name"]+' '+
+                    task[i]["Status" ]+
+                    "<button onClick='completeTask("+i+")'>Complete task</button>"
+                }
+               
+                
+            }
+
+        </script>
+    </body>
+</html>

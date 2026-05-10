@@ -12,6 +12,27 @@ class Node{
 
 class NodeWiseTraversal{
 
+    void BottomtoTopDisplay(Node root){
+        Queue<Node> q = new LinkedList<>();
+        Stack<Node> stk = new Stack<>();
+        q.add(root);
+        while(!q.isEmpty()){
+            Node cur = q.poll();
+            stk.push(cur);
+
+            if(cur.right!=null){
+                q.add(cur.right);
+            }
+            if(cur.left!=null){
+                q.add(cur.left);
+            }
+        }
+        while(!stk.isEmpty()){
+            System.out.print(stk.pop().val+" ");
+        }
+
+    }
+
     void ToptoBottomDisplay(Node root){
         Queue<Node> q = new LinkedList<>();
         q.add(root);
@@ -59,6 +80,7 @@ class NodeWiseTraversal{
         root=tree.insert(root,50);
 
         tree.ToptoBottomDisplay(root);
+        tree.BottomtoTopDisplay(root);
 
 
     }

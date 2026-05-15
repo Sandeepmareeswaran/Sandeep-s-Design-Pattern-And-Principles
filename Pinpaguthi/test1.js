@@ -31,7 +31,6 @@ app.get('/api/doctors/2/title',async(req,res)=>{
     }
 })
 
-
 app.post('/api/appointments',async(req,res)=>{
     const{ doctorId,title,discription} = req.body;
     if(!doctorId || !title || !discription){
@@ -48,10 +47,8 @@ app.post('/api/appointments',async(req,res)=>{
 
     appointment.push(newApp);
     res.status(201).json(newApp);
-    
-   
-
 })
+
 const patient=[];
 app.post("/api/patients",async(req,res)=>{
     const{patientId,age,des} = req.body;
@@ -69,6 +66,7 @@ app.post("/api/patients",async(req,res)=>{
     patient.push(newpat);
     res.status(201).json(newpat);
 })
+
 let booking=[];
 
 app.post("/api/bookapp",async(req,res)=>{
@@ -87,7 +85,6 @@ app.post("/api/bookapp",async(req,res)=>{
     }
     booking.push(newbook);
     res.status(201).json(newbook);
-
 })
 
 app.get("/api/showbook",async(req,res)=>{

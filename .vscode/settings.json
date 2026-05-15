@@ -1,0 +1,11 @@
+{
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.experimental.configFile": {
+    "Munpaguthi/frontend/src/index.css": "Munpaguthi/frontend/src/**"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}

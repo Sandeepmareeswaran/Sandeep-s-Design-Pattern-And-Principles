@@ -27,15 +27,7 @@ class Linkedlist{
 
         }
     }
-    void display(){
-        Node temp= head;
-
-        while(temp!=null){
-            System.out.print(temp.data+"->");
-            temp=temp.next;
-        }
-        System.out.print("Null");
-    }
+    
 
     void deletel(int n){
         Node temp = head;

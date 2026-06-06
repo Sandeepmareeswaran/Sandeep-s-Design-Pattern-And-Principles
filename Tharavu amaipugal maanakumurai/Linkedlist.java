@@ -7,9 +7,6 @@ class Node{
     }
 }
 
-class Linkedlist{
-    Node head =  null;
-
    
 
     void insert(int data){

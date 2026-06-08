@@ -1,30 +1,4 @@
-//Design a Java-based menu-driven Bank Account system using OOP where users can create accounts, check balance, and deposit money using an `ArrayList<Account>`.
 
-
-import java.util.*;
-
-class Account {
-    private String name;
-    private int balance;
-
-    Account(String name, int balance) {
-        this.name = name;
-        this.balance = balance;
-    }
-
-    String get_name() {
-        return name;
-    }
-
-    int get_balance() {
-        return balance;
-    }
-
-    int set_balance(int amt) {
-        balance += amt;
-        return balance;
-    }
-}
 
 class Bank_with_class {
     public static void main(String[] args) {
